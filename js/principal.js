@@ -12,13 +12,13 @@ console.log(peso);      //valor do peso
 console.log(altura);    //valor da altura
 */
 
-var pacientes = document.querySelectorAll ("paciente")
+var pacientes  = document.querySelectorAll (".paciente");
 
-for (var i=0; i  < pacientes.length; i++) {
+for (var i=0; i < pacientes.length; i++) {
 
-    var paciente = pacientes[i];
+    var paciente = pacientes[i];       //inserir
 
-    var tdPeso =  paciente.querySelector(".info.peso");
+    var tdPeso = paciente.querySelector(".info-peso");
     var peso = tdPeso.textContent;
     var tdAltura = paciente.querySelector(".info-altura");
     var altura = tdAltura.textContent;
@@ -27,18 +27,20 @@ for (var i=0; i  < pacientes.length; i++) {
     var pesoEhValido = true;
     var alturaEhValida = true;
     //validar os dados de peso
-    if (peso <= 0 ||  peso > 1000) {
+    if (peso <= 0 || peso >= 1000) {
         console.log("Peso inválido");
         pesoEhValido = false;
         tdImc.textContent = "Peso inválido";
+
     }
     //validar a altura
-    if (altura <=0 || altura > 3){
+    if (altura <=0 || altura > 3) {
         console.log("Altura inválida");
         alturaEhValida = false;
         tdImc.textContent = "Altura inválida";
+
     }
-    //validar peso e altura
+    //Validar peso e altura
     if (alturaEhValida && pesoEhValido) {
         var imc = peso / (altura*altura);
         tdImc.textContent = imc.toFixed(2);
