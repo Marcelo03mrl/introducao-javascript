@@ -24,6 +24,7 @@ botaoAdicionar.addEventListener ("click",function(){
     pacienteTr.appendChild(pesoTd);
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd); 
+    
 
     var tabela = document.querySelector("#tabela-pacientes");
 
