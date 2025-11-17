@@ -47,35 +47,26 @@ for (var i=0; i < pacientes.length; i++) {
     }
 
 }
+ // Reescrever o mesmo código em três funções independentes
+ function calculate(peso, altura){
+    var imc =0;
+    imc = peso/(altura*altura);
+    return imc.toFixed(2);
 
-var botaoAdicionar = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener ("click",function(){
-    
-    var form = document.querySelector("#form-adiciona"); 
-    var nome = form.nome.value;
-    var peso = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura.value;
+ }
 
-    var pacienteTr = document.createElement("tr");
-    var nomeTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var gorduraTd = document.createElement("td");
-    var imcTd = document.createElement("td");
+ function validaPeso(peso){
+    if (peso <= 0 || peso >=1000) {
 
-    nomeTd.textContent = nome;
-    pesoTd.textContent = peso;
-    alturaTd.textContent = altura; 
-    gorduraTd.textContent = gordura; 
+    } else {
+        return true;
+    }
+}
 
-    pacienteTr.appendChild(nomeTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(gorduraTd); 
+ function validaAltura(altura){ 
+    if (altura <=0 || altura > 3) {
+        return false;
+           } else {
 
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteTr);
-    
-});
+    }
+}
